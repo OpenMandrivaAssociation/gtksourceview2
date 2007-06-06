@@ -1,11 +1,11 @@
-%define api_version	1.0
+%define api_version	2.0
 %define lib_major 0
 %define lib_name	%mklibname %{name}- %{api_version} %{lib_major}
 
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 1.8.5
+Version: 1.90.0
 Release:	%mkrel 1
 License:	GPL
 Group:		Editors
@@ -84,7 +84,7 @@ rm -rf %{buildroot}
 
 %files -n %{lib_name} 
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/libgtksourceview-%{api_version}.so.%{lib_major}*
 
 %files -n %{lib_name}-devel
 %defattr(-,root,root)
