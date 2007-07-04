@@ -5,7 +5,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 1.90.1
+Version: 1.90.2
 Release:	%mkrel 1
 License:	GPL
 Group:		Editors
@@ -88,7 +88,7 @@ rm -rf %{buildroot}
 
 %files -n %{lib_name}-devel
 %defattr(-,root,root)
-%doc %{_datadir}/gtk-doc/html/gtksourceview
+%doc %{_datadir}/gtk-doc/html/gtksourceview-2.0
 %{_libdir}/*.so
 %attr(644,root,root) %{_libdir}/*.la
 %{_includedir}/*
