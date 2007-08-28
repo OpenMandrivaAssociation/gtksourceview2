@@ -1,11 +1,12 @@
 %define api_version	2.0
 %define lib_major 0
-%define lib_name	%mklibname %{name}- %{api_version} %{lib_major}
+%define libname	%mklibname %{name}- %{api_version} %{lib_major}
+%define libnamedev %mklibname -d %{name}- %{api_version}
 
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 1.90.3
+Version: 1.90.4
 Release:	%mkrel 1
 License:	GPL
 Group:		Editors
@@ -23,7 +24,7 @@ GtkSourceview is a library that adds syntax highlighting,
 line numbers, and other programming-editor features.
 GtkSourceView specializes these features for a code editor.
 
-%package -n %{lib_name}
+%package -n %{libname}
 Summary:	Source code viewing library
 Group:		Editors
 Requires:	%{name} >= %{version}-%{release}
@@ -33,15 +34,15 @@ Obsoletes:	libgtksourceview0
 Provides:   libgtksourceview1.0 = %{version}-%{release}
 Obsoletes:  libgtksourceview1.0
 
-%description -n %{lib_name}
+%description -n %{libname}
 GtkSourceview is a library that adds syntax highlighting,
 line numbers, and other programming-editor features.
 GtkSourceView specializes these features for a code editor.
 
-%package -n %{lib_name}-devel
+%package -n %{libnamedev}
 Summary:        Libraries and include files for GtkSourceView
 Group:          Development/GNOME and GTK+
-Requires:       %{lib_name} = %{version}
+Requires:       %{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
@@ -49,8 +50,9 @@ Provides:	libgtksourceview0-devel = %{version}-%{release}
 Obsoletes:	libgtksourceview0-devel
 Provides:   libgtksourceview1.0-devel = %{version}-%{release}
 Obsoletes:   libgtksourceview1.0-devel
+Obsoletes: %mklibname -d  %{name}- 2.0 0
 
-%description -n %{lib_name}-devel
+%description -n %{libnamedev}
 GtkSourceView development files 
 
 
@@ -70,9 +72,9 @@ rm -rf %{buildroot}
 
 %{find_lang} %{name}-%{api_version}
 
-%post -n %{lib_name} -p /sbin/ldconfig
+%post -n %{libname} -p /sbin/ldconfig
 
-%postun -n %{lib_name} -p /sbin/ldconfig
+%postun -n %{libname} -p /sbin/ldconfig
 
 %clean
 rm -rf %{buildroot}
@@ -82,11 +84,11 @@ rm -rf %{buildroot}
 %doc AUTHORS NEWS README TODO
 %{_datadir}/gtksourceview-%{api_version}
 
-%files -n %{lib_name} 
+%files -n %{libname} 
 %defattr(-,root,root)
 %{_libdir}/libgtksourceview-%{api_version}.so.%{lib_major}*
 
-%files -n %{lib_name}-devel
+%files -n %{libnamedev}
 %defattr(-,root,root)
 %doc %{_datadir}/gtk-doc/html/gtksourceview-2.0
 %{_libdir}/*.so
