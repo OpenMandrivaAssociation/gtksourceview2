@@ -6,7 +6,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 1.90.5
+Version: 2.0.0
 Release:	%mkrel 1
 License:	GPL
 Group:		Editors
@@ -77,7 +77,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}-%{api_version}.lang
 %defattr(-,root,root)
-%doc AUTHORS NEWS README TODO
+%doc AUTHORS NEWS README
 %{_datadir}/gtksourceview-%{api_version}
 
 %files -n %{libname} 
