@@ -6,16 +6,16 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 2.2.2
+Version: 2.3.0
 Release:	%mkrel 1
-License:	GPL
+License:	GPLv2+
 Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	libgtk+2-devel >= 2.3.0
 BuildRequires:  gtk-doc
-BuildRequires:  perl-XML-Parser
+BuildRequires:  intltool
 Conflicts:		gtksourceview-sharp <= 0.5-3mdk
 
 %description
