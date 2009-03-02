@@ -6,7 +6,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 2.5.5
+Version: 2.5.6
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Editors
