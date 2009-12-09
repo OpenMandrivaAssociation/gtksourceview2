@@ -14,6 +14,7 @@ URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Buildroot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	libgtk+2-devel >= 2.3.0
+BuildRequires:  libGConf2-devel
 BuildRequires:  gtk-doc
 BuildRequires:  intltool
 Conflicts:		gtksourceview-sharp <= 0.5-3mdk
