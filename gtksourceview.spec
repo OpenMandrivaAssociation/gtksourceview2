@@ -6,7 +6,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 2.10.4
+Version: 2.11.2
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Editors
@@ -87,6 +87,7 @@ rm -rf %{buildroot}
 %files -n %{libname} 
 %defattr(-,root,root)
 %{_libdir}/libgtksourceview-%{api_version}.so.%{lib_major}*
+%{_libdir}/girepository-1.0/GtkSource-%{api_version}.typelib
 
 %files -n %{libnamedev}
 %defattr(-,root,root)
@@ -95,5 +96,6 @@ rm -rf %{buildroot}
 %attr(644,root,root) %{_libdir}/*.la
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
+%_datadir/gir-1.0/GtkSource-%{api_version}.gir
 
 
