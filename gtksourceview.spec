@@ -6,8 +6,8 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 2.11.2
-Release:	%mkrel 2
+Version: 2.10.5
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
@@ -15,7 +15,6 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz
 Buildroot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	libgtk+2-devel >= 2.3.0
 BuildRequires:  libGConf2-devel
-BuildRequires:  gobject-introspection-devel
 BuildRequires:  gtk-doc
 BuildRequires:  intltool
 Conflicts:		gtksourceview-sharp <= 0.5-3mdk
@@ -88,7 +87,6 @@ rm -rf %{buildroot}
 %files -n %{libname} 
 %defattr(-,root,root)
 %{_libdir}/libgtksourceview-%{api_version}.so.%{lib_major}*
-%{_libdir}/girepository-1.0/GtkSource-%{api_version}.typelib
 
 %files -n %{libnamedev}
 %defattr(-,root,root)
@@ -97,6 +95,5 @@ rm -rf %{buildroot}
 %attr(644,root,root) %{_libdir}/*.la
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
-%_datadir/gir-1.0/GtkSource-%{api_version}.gir
 
 
