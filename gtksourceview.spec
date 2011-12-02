@@ -6,18 +6,18 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceview
-Version: 2.10.5
-Release:	%mkrel 3
+Version:	2.10.5
+Release:	%mkrel 4
 License:	GPLv2+
 Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Buildroot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	libgtk+2-devel >= 2.3.0
-BuildRequires:  libGConf2-devel
-BuildRequires:  gtk-doc
-BuildRequires:  intltool
-Conflicts:		gtksourceview-sharp <= 0.5-3mdk
+BuildRequires:	libGConf2-devel
+BuildRequires:	gtk-doc
+BuildRequires:	intltool
+Conflicts:	gtksourceview-sharp <= 0.5-3mdk
 
 %description
 GtkSourceview is a library that adds syntax highlighting,
@@ -31,8 +31,8 @@ Requires:	%{name} >= %{version}-%{release}
 Provides:	lib%{name} = %{version}-%{release}
 Provides:	libgtksourceview0 = %{version}-%{release}
 Obsoletes:	libgtksourceview0
-Provides:   libgtksourceview1.0 = %{version}-%{release}
-Obsoletes:  libgtksourceview1.0
+Provides:	libgtksourceview1.0 = %{version}-%{release}
+Obsoletes:	libgtksourceview1.0
 
 %description -n %{libname}
 GtkSourceview is a library that adds syntax highlighting,
@@ -40,13 +40,13 @@ line numbers, and other programming-editor features.
 GtkSourceView specializes these features for a code editor.
 
 %package -n %{libnamedev}
-Summary:        Libraries and include files for GtkSourceView
-Group:          Development/GNOME and GTK+
-Requires:       %{libname} = %{version}
+Summary:	Libraries and include files for GtkSourceView
+Group:		Development/GNOME and GTK+
+Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-%{api_version}-devel = %{version}-%{release}
-Obsoletes: %mklibname -d  %{name}- 2.0 0
+Obsoletes:	%mklibname -d  %{name}- 2.0 0
 
 %description -n %{libnamedev}
 GtkSourceView development files 
