@@ -7,7 +7,7 @@
 Summary:	Source code viewing library
 Name:		gtksourceview
 Version:	2.10.5
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPLv2+
 Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
@@ -67,14 +67,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 %{find_lang} %{name}-%{api_version}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+rm -f %buildroot%{_libdir}/*.la
 
 %clean
 rm -rf %{buildroot}
@@ -92,7 +85,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc %{_datadir}/gtk-doc/html/gtksourceview-2.0
 %{_libdir}/*.so
-%attr(644,root,root) %{_libdir}/*.la
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 
