@@ -12,6 +12,7 @@ License:	GPLv2+
 Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch1:	gtksourceview-2.11-fix-GCONST-def.patch
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	gtk-doc
@@ -51,6 +52,7 @@ GtkSourceView development files.
 
 %prep
 %setup -q
+%patch1 -p1 -b .gconst
 
 %build
 %configure2_5x --disable-static
