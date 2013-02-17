@@ -13,6 +13,7 @@ Group:		Editors
 URL:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch1:	gtksourceview-2.11-fix-GCONST-def.patch
+Patch2: gtksourceview-2.11-glib-unicode-constant.patch
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	gtk-doc
@@ -53,6 +54,7 @@ GtkSourceView development files.
 %prep
 %setup -q
 %patch1 -p1 -b .gconst
+%patch2 -p1 -b .glib-deprecated
 
 %build
 %configure2_5x --disable-static
