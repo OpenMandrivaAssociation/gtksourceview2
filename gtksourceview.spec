@@ -8,7 +8,7 @@
 Summary:	Source code viewing library
 Name:		gtksourceview
 Version:	2.11.2
-Release:	5
+Release:	6
 License:	GPLv2+
 Group:		Editors
 Url:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
