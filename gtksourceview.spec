@@ -18,7 +18,6 @@ Patch2: 	gtksourceview-2.11-glib-unicode-constant.patch
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(gconf-2.0)
 
 %description
 GtkSourceview is a library that adds syntax highlighting,
