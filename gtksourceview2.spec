@@ -9,18 +9,25 @@
 %define devname %mklibname -d %{name}- %{api}
 
 Summary:	Source code viewing library
-Name:		gtksourceview
+Name:		gtksourceview2
 Version:	2.11.2
 Release:	16
 License:	GPLv2+
 Group:		Editors
 Url:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtksourceview/%{url_ver}/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtksourceview/%{url_ver}/gtksourceview-%{version}.tar.bz2
 Patch1:		gtksourceview-2.11-fix-GCONST-def.patch
 Patch2: 	gtksourceview-2.11-glib-unicode-constant.patch
+Patch3:		gtksourceview-2.11-compile.patch
+# The tests are seriously broken and violating just
+# about every rule of -Werror sanity there is.
+# Let's just not build them, this is just a broken
+# prehistoric version of broken crap anyway
+Patch4:		gtksourceview-2.11.2-no-tests.patch
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
 
 %description
 GtkSourceview is a library that adds syntax highlighting,
@@ -48,19 +55,23 @@ Provides:	%{name}-devel = %{version}-%{release}
 GtkSourceView development files.
 
 %prep
-%setup -q
+%setup -qn gtksourceview-%{version}
 %apply_patches
 
-%build
-%configure2_5x --disable-static
+libtoolize --force
+aclocal -I m4
+automake -a
+autoconf
 
+%build
+%configure --disable-introspection
 %make
 
 %install
 %makeinstall_std
-%find_lang %{name}-%{api}
+%find_lang gtksourceview-%{api}
 
-%files -f %{name}-%{api}.lang
+%files -f gtksourceview-%{api}.lang
 %doc AUTHORS NEWS README
 %{_datadir}/gtksourceview-%{api}
 

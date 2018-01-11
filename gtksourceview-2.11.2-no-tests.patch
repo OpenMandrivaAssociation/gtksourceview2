@@ -1,0 +1,10 @@
+--- gtksourceview-2.11.2/Makefile.am.omv~	2018-01-11 04:07:36.189510243 +0100
++++ gtksourceview-2.11.2/Makefile.am	2018-01-11 04:07:39.618520605 +0100
+@@ -1,6 +1,6 @@
+ ACLOCAL_AMFLAGS  = -I m4 ${ACLOCAL_FLAGS}
+ 
+-SUBDIRS = gtksourceview po data docs tests
++SUBDIRS = gtksourceview po data docs
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gtksourceview-2.0.pc

@@ -1,0 +1,21 @@
+--- gtksourceview-2.11.2/configure.ac.omv~	2018-01-11 03:47:52.458051064 +0100
++++ gtksourceview-2.11.2/configure.ac	2018-01-11 03:48:09.799098216 +0100
+@@ -72,7 +72,7 @@ if test "$enable_deprecations" = "yes";
+ 	AC_SUBST(DISABLE_DEPRECATED_CFLAGS)
+ fi
+ 
+-PKG_CHECK_EXISTS([gtk+-3.0 >= 2.90],
++PKG_CHECK_EXISTS([broken-gtk+-3.0 >= 2.90],
+ 		 [
+ 		 	GTK_REQUIRED=gtk+-3.0
+ 		 	GTK_REQUIRED_VERSION=2.90.0
+--- gtksourceview-2.11.2/gtksourceview/gtksourcecompletion.h.omv~	2018-01-11 03:46:31.146832774 +0100
++++ gtksourceview-2.11.2/gtksourceview/gtksourcecompletion.h	2018-01-11 03:46:37.510849682 +0100
+@@ -24,6 +24,7 @@
+ #define __GTK_SOURCE_COMPLETION_H__
+ 
+ #include <gtk/gtk.h>
++#include <gtk/gtkobject.h>
+ #include <gtksourceview/gtksourcecompletioninfo.h>
+ #include <gtksourceview/gtksourcecompletionprovider.h>
+ #include <gtksourceview/gtksourcelanguage.h>
