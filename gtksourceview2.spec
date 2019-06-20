@@ -29,6 +29,7 @@ BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  gnome-common
+BuildRequires:  pkgconfig(libxml-2.0)
 
 %description
 GtkSourceview is a library that adds syntax highlighting,
