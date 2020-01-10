@@ -58,7 +58,7 @@ GtkSourceView development files.
 
 %prep
 %setup -qn gtksourceview-%{version}
-%apply_patches
+%autopatch -p1
 
 libtoolize --force
 aclocal -I m4
