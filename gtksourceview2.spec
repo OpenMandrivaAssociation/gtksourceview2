@@ -14,7 +14,7 @@ Version:	2.11.2
 Release:	19
 License:	GPLv2+
 Group:		Editors
-Url:		http://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
+Url:		https://people.ecsc.co.uk/~matt/downloads/rpms/gtksourceview/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtksourceview/%{url_ver}/gtksourceview-%{version}.tar.bz2
 Patch1:		gtksourceview-2.11-fix-GCONST-def.patch
 Patch2: 	gtksourceview-2.11-glib-unicode-constant.patch
