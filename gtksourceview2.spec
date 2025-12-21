@@ -24,6 +24,11 @@ Patch3:		gtksourceview-2.11-compile.patch
 # Let's just not build them, this is just a broken
 # prehistoric version of broken crap anyway
 Patch4:		gtksourceview-2.11.2-no-tests.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
