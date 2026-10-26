@@ -2,6 +2,7 @@
 
 %define _disable_rebuild_configure 1
 %define _disable_lto 1
+%global optflags %{optflags} -std=gnu17 -Wno-incompatible-pointer-types
 
 %define api	2.0
 %define major	0
